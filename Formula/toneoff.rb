@@ -1,6 +1,8 @@
 class Toneoff < Formula
   desc "Menu bar app that turns True Tone off while external displays are connected"
   homepage "https://github.com/timu/toneoff"
+  url "https://github.com/timu/toneoff/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "821b17554dceaa791b1f80896338170a0838edfa8da30ad2e54cee658d45c0b9"
   license "MIT"
   head "https://github.com/timu/toneoff.git", branch: "main"
 
@@ -27,14 +29,11 @@ class Toneoff < Formula
 
   def caveats
     <<~EOS
-      To start Toneoff now and at every login:
-        brew services start toneoff
-
-      Or start it once by hand:
+      To start Toneoff once by hand:
         open "#{opt_prefix}/Toneoff.app"
 
-      Use one or the other. If you start it from the Homebrew service, leave
-      "Launch at Login" in its menu unticked.
+      To have it start at every login, use either the Homebrew service below
+      or the "Launch at Login" option in its menu bar menu, but not both.
     EOS
   end
 
